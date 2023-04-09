@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+input[type="number"] {
+  @apply w-full p-2 border rounded-lg focus:border-sky-800 focus:ring focus:ring-sky-800/30 focus:outline-none;
+}
+
+.nav {
+  @apply px-6 py-2 font-semibold rounded-full hover:text-white hover:bg-sky-600;
+}
+.nav-active {
+  @apply text-white bg-sky-800;
+}
+
+label {
+  @apply font-semibold;
+}
