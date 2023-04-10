@@ -21,6 +21,7 @@ const Candidate = ({ candidate, canVote, poll, refresh }) => {
         await contract.methods.vote(poll, candidate.id, password).send({ from: account }).then((err) => {
             alert(`You have successfully voted for ${candidate.name}`);
             setVoteMode(false);
+            checkVoted();
             refresh();
         }).catch((err) => {
             if (err.message.includes("You are not registered")) {
