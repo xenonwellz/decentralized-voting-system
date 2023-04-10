@@ -8,8 +8,9 @@ const Candidate = ({ candidate, canVote, poll, refresh }) => {
     const [hasVoted, setHasVoted] = useState(true);
 
     const checkVoted = async () => {
-        const hasVoted = await contract.methods.hasVoted(poll).call().then();
+        const hasVoted = await contract.methods.hasVoted(poll).call({ from: account }).then();
         setHasVoted(hasVoted);
+        console.log(hasVoted);
     }
 
     useEffect(() => {
